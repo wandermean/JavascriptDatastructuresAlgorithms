@@ -2,10 +2,10 @@
  * @Author: Zhe Chen 
  * @Date: 2018-12-13 00:08:01 
  * @Last Modified by: Zhe Chen
- * @Last Modified time: 2018-12-13 00:09:47
+ * @Last Modified time: 2018-12-13 00:22:57
  */
 
-function decimalToBinary(decdecNumber) {
+function decimalToBinary(decNumber) {
   const remStack = new Stack();
   let rem;
   let binaryString = '';
