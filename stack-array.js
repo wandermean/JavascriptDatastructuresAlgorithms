@@ -2,8 +2,8 @@
  * @Author: Zhe Chen
  * @Date: 2018-12-12 23:09:06
  * @Last Modified by: Zhe Chen
- * @Last Modified time: 2018-12-12 23:10:02
- */
+ * @Last Modified time: 2018-12-12 23:27:27
+ */ 
 
 class StackArray {
   constructor() {
