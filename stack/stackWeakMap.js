@@ -2,13 +2,13 @@
  * @Author: Zhe Chen 
  * @Date: 2018-12-12 23:09:25 
  * @Last Modified by: Zhe Chen
- * @Last Modified time: 2018-12-12 23:27:40
+ * @Last Modified time: 2018-12-20 22:50:55
  */ 
 
 const _items = new WeakMap();
 const _count = new WeakMap();
 
-class Stack {
+class StackWeakMap {
   constructor() {
     _count.set(this, 0);
     _items.set(this, {});
@@ -72,3 +72,5 @@ class Stack {
     return objString;
   }
 }
+
+module.exports = StackWeakMap

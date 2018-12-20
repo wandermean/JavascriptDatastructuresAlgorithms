@@ -2,10 +2,10 @@
  * @Author: Zhe Chen 
  * @Date: 2018-12-19 09:25:22 
  * @Last Modified by: Zhe Chen
- * @Last Modified time: 2018-12-19 10:46:25
+ * @Last Modified time: 2018-12-20 22:47:12
  */
 
-const Stack = require('./stack')
+const Stack = require('./StackArray')
 // import Stack from './stack';
 
 function decimalToBinary(decNumber) {
@@ -50,3 +50,6 @@ function baseConverter(decNumber, base) {
 
   return baseString;
 }
+
+console.log(decimalToBinary(199))
+console.log(baseConverter(199,8))

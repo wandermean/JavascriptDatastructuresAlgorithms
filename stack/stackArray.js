@@ -2,7 +2,7 @@
  * @Author: Zhe Chen
  * @Date: 2018-12-12 23:09:06
  * @Last Modified by: Zhe Chen
- * @Last Modified time: 2018-12-12 23:27:27
+ * @Last Modified time: 2018-12-20 22:45:53
  */ 
 
 class StackArray {
@@ -34,3 +34,5 @@ class StackArray {
     return this.items.toString();
   }
 }
+
+module.exports = StackArray

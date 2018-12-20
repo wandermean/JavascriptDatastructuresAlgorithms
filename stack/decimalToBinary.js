@@ -2,10 +2,10 @@
  * @Author: Zhe Chen 
  * @Date: 2018-12-13 00:08:01 
  * @Last Modified by: Zhe Chen
- * @Last Modified time: 2018-12-19 10:46:33
+ * @Last Modified time: 2018-12-20 22:48:36
  */
 
-const Stack = require('./stack')
+const Stack = require('./StackArray')
 // import Stack from './stack'
 
 function decimalToBinary(decNumber) {
@@ -25,3 +25,5 @@ function decimalToBinary(decNumber) {
 
   return binaryString;
 }
+
+console.log(decimalToBinary(199))

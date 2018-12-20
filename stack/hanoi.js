@@ -2,9 +2,11 @@
  * @Author: Zhe Chen 
  * @Date: 2018-12-19 21:06:29 
  * @Last Modified by: Zhe Chen
- * @Last Modified time: 2018-12-19 22:37:51
+ * @Last Modified time: 2018-12-20 23:03:02
  */
-const Stack = require('./stack')
+// const Stack = require('./StackArray')
+// const Stack = require('./stackSymbol')
+const Stack = require('./stackClass')
 
 function towerOfHanoi(plates, source, helper, dest, sourceName, helperName, destName, moves = []) {
   if (plates <= 0) {

@@ -2,9 +2,9 @@
  * @Author: Zhe Chen 
  * @Date: 2018-12-19 10:41:40 
  * @Last Modified by: Zhe Chen
- * @Last Modified time: 2018-12-19 22:23:12
+ * @Last Modified time: 2018-12-20 22:45:20
  */
-const Stack = require('./stack')
+const Stack = require('./stackArray')
 // import Stack from './stack';
 function balancedSymbols(symbols) {
   const stack = new Stack();

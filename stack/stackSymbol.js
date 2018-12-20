@@ -2,12 +2,12 @@
  * @Author: Zhe Chen 
  * @Date: 2018-12-12 23:09:21 
  * @Last Modified by: Zhe Chen
- * @Last Modified time: 2018-12-12 23:27:39
+ * @Last Modified time: 2018-12-20 22:50:17
  */
 
 const _items = Symbol('stackItems');
 
-class Stack {
+class StackSymbol {
   constructor() {
     this[_items] = [];
   }
@@ -45,10 +45,12 @@ class Stack {
   }
 }
 
-const stack = new Stack();
-const objectSymbols = Object.getOwnPropertySymbols(stack);
-console.log(objectSymbols.length); // 1
-console.log(objectSymbols); // [Symbol()]
-console.log(objectSymbols[0]); // Symbol()
-stack[objectSymbols[0]].push(1);
-stack.print(); // 5, 8, 1
+// const stack = new Stack();
+// const objectSymbols = Object.getOwnPropertySymbols(stack);
+// console.log(objectSymbols.length); // 1
+// console.log(objectSymbols); // [Symbol()]
+// console.log(objectSymbols[0]); // Symbol()
+// stack[objectSymbols[0]].push(1);
+// stack.print(); // 5, 8, 1
+
+module.exports = StackSymbol
