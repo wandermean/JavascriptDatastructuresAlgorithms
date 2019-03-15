@@ -8,13 +8,12 @@ class Node {
 class LinkedList {
   constructor() {
     this.count = 0;
-    this.head = undefined;
+    this.head = null;
   }
   append(element) {
     const node = new Node(element);
     let current;
     if (this.head == null) {
-      // catches null && undefined
       this.head = node;
     } else {
       current = this.head;
@@ -33,7 +32,7 @@ class LinkedList {
       }
       return node;
     }
-    return undefined;
+    return null;
   }
   insert(element, index) {
     if (index >= 0 && index <= this.count) {
@@ -65,7 +64,7 @@ class LinkedList {
       this.count--;
       return current.element;
     }
-    return undefined;
+    return null;
   }
   remove(element) {
     const index = this.indexOf(element);
@@ -91,7 +90,7 @@ class LinkedList {
     return this.head;
   }
   clear() {
-    this.head = undefined;
+    this.head = null;
     this.count = 0;
   }
   toString() {
@@ -112,3 +111,4 @@ let list = new LinkedList();
 list.append(1);
 list.append(2);
 console.log(list.toString());
+console.log(list.size());

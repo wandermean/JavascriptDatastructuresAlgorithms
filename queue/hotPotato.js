@@ -21,5 +21,5 @@ function hotPotato(elementsList, num) {
 }
 
 const names = ['阿汪','凯哥','娜姐','萍姐','1200'];
-let winner = hotPotato(names,1);
+let winner = hotPotato(names,2);
 console.log(winner,'获胜')
