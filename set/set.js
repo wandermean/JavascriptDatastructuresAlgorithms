@@ -104,6 +104,10 @@ class Set {
 }
 
 let set = new Set();
-set.add({a:1})
-set.add(1)
-console.log(set.toString())
+console.log(set.add({a:2}))
+console.log(set.add({a:1}))
+console.log(set.add(1))
+console.log(set.add(1))
+console.log(set.add([1,3]))
+console.log(set.add([2,4]))
+console.log(set)
