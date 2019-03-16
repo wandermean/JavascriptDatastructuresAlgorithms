@@ -1,11 +1,14 @@
-class Node {
-  constructor(element, next) {
-    this.element = element;
-    this.next = next;
-  }
-}
+// class Node {
+//   constructor(element, next) {
+//     this.element = element;
+//     this.next = next;
+//   }
+// }
+// import { Node } from './nodeModel'
+const {Node} = require('./nodeModel')
 
-class LinkedList {
+// class LinkedList {
+module.exports = class LinkedList {
   constructor() {
     this.count = 0;
     this.head = null;
@@ -107,15 +110,15 @@ class LinkedList {
   }
 }
 
-let list = new LinkedList();
-list.append(1);
-list.append(2);
-list.append(3);
-list.append(4);
-list.append(5);
-list.append(5);
-list.insert(6,3);
+// let list = new LinkedList();
+// list.append(1);
+// list.append(2);
+// list.append(3);
+// list.append(4);
+// list.append(5);
+// list.append(5);
+// list.insert(6,3);
 // list.remove(5)
 // list.removeAt(1)
-console.log(list.toString());
+// console.log(list.toString());
 // console.log(list.size());
