@@ -21,7 +21,8 @@ class Set {
   }
 
   has(element) {
-    return Object.prototype.hasOwnProperty.call(this.items, element);
+    return this.items.hasOwnProperty(element)
+    // return Object.prototype.hasOwnProperty.call(this.items, element);
   }
 
   values() {
@@ -37,16 +38,8 @@ class Set {
 
   intersection(otherSet) {
     const intersectionSet = new Set();
-    const values = this.values();
-    const otherValues = otherSet.values();
-    let biggerSet = values;
-    let smallerSet = otherValues;
-    if (otherValues.length - values.length > 0) {
-      biggerSet = otherValues;
-      smallerSet = values;
-    }
-    smallerSet.forEach(value => {
-      if (biggerSet.includes(value)) {
+    this.values().forEach((value) => {
+      if (otherSet.has(value)) {
         intersectionSet.add(value);
       }
     });
@@ -103,11 +96,22 @@ class Set {
   }
 }
 
-let set = new Set();
-console.log(set.add({a:2}))
-console.log(set.add({a:1}))
-console.log(set.add(1))
-console.log(set.add(1))
-console.log(set.add([1,3]))
-console.log(set.add([2,4]))
-console.log(set)
+const set = new Set();
+set.add({a:2})
+set.add({a:1})
+set.add(1)
+set.add(3)
+set.add(false)
+set.add([1,3])
+set.add([2,4])
+
+const set2 = new Set();
+set.add({a:2})
+set.add({a:1})
+set2.add(3)
+set2.add(4)
+set.add(false)
+set.add([1,3])
+set.add([2,5])
+console.log(set.intersection(set2).toString())
+console.log(set.union(set2).toString())
