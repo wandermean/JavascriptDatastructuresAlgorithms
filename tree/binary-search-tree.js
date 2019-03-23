@@ -1,10 +1,14 @@
-import { Compare, defaultCompare } from '../util';
-import { TreeNode as Node } from './models/node';
+// import { Compare, defaultCompare } from '../util';
+// import { TreeNode as Node } from './models/node';
 
-export default class BinarySearchTree {
+const { Compare, defaultCompare } = require ('../util.js');
+const { TreeNode } = require ('../linkedList/nodeModel');
+const Node = TreeNode;
+
+class BinarySearchTree {
   constructor(compareFn = defaultCompare) {
     this.compareFn = compareFn;
-    this.root = undefined;
+    this.root = null;
   }
   insert(key) {
     if (this.root == null) {
@@ -97,27 +101,23 @@ export default class BinarySearchTree {
     this.root = this.removeNode(this.root, key);
   }
   removeNode(node, key) {
-    if (node == null) {
-      return undefined;
+    if (node == null) {   //如果正在检测的节点为null，说明key不存在于树中
+      return null;
     }
-    if (this.compareFn(key, node.key) === Compare.LESS_THAN) {
+    if (key < node.key) {   //key比当前节点小，继续沿着左侧找下一个节点
       node.left = this.removeNode(node.left, key);
       return node;
-    } else if (this.compareFn(key, node.key) === Compare.BIGGER_THAN) {
+    } else if (key > node.key) {    //key比当前节点大，继续沿着右侧找下一个节点
       node.right = this.removeNode(node.right, key);
       return node;
     }
-    // key is equal to node.item
-    // handle 3 special conditions
-    // 1 - a leaf node
-    // 2 - a node with only 1 child
-    // 3 - a node with 2 children
-    // case 1
+    //key等于当前节点，考虑三种情况
+    //情况1:节点是一个叶节点
     if (node.left == null && node.right == null) {
-      node = undefined;
-      return node;
+      node = null;    //把当前节点设为null，即删除了改节点
+      return node;    //将父节点对应的指针指向null
     }
-    // case 2
+    //如果该节点有一个左侧子节点或一个右侧子节点，则让父节点的指针直接指向该子节点
     if (node.left == null) {
       node = node.right;
       return node;
@@ -125,10 +125,25 @@ export default class BinarySearchTree {
       node = node.left;
       return node;
     }
-    // case 3
-    const aux = this.minNode(node.right);
-    node.key = aux.key;
-    node.right = this.removeNode(node.right, aux.key);
+    //如果该节点既有左侧子节点，也有右侧子节点
+    const aux = this.minNode(node.right);   //先找到右边子树中最小节点
+    node.key = aux.key;   //用最小节点替换这个节点，但是这样，树中就有两个相同的key了
+    node.right = this.removeNode(node.right, aux.key);    //把右侧子树中原来的最小节点删掉
     return node;
   }
 }
+
+const tree = new BinarySearchTree();
+tree.insert(1);
+tree.insert(3);
+tree.insert(5);
+tree.insert(2);
+tree.insert(65);
+tree.insert(1451);
+tree.insert(434);
+tree.insert(21);
+tree.insert(6);
+tree.insert(11);
+tree.insert(13);
+tree.remove(13)
+tree.inOrderTraverse(v=>console.log(v))

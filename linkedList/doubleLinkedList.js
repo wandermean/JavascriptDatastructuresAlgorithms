@@ -1,7 +1,7 @@
 // import LinkedList from './linkedList';
 // import { DoubleNode } from './nodeModel';
-const LinkedList = require ('./linkedList');
-const {DoubleNode} = require ('./nodeModel');
+const LinkedList = require("./linkedList");
+const { DoubleNode } = require("./nodeModel");
 
 // export default class DoublyLinkedList extends LinkedList {
 class DoublyLinkedList extends LinkedList {
@@ -46,8 +46,8 @@ class DoublyLinkedList extends LinkedList {
         current = previous.next;
         node.next = current;
         previous.next = node;
-        current.prev = node; 
-        node.prev = previous; 
+        current.prev = node;
+        node.prev = previous;
       }
       this.count++;
       return true;
@@ -109,7 +109,7 @@ class DoublyLinkedList extends LinkedList {
 
   toString() {
     if (this.head == null) {
-      return '';
+      return "";
     }
     let objString = `${this.head.element}`;
     let current = this.head.next;
@@ -122,7 +122,7 @@ class DoublyLinkedList extends LinkedList {
 
   inverseToString() {
     if (this.tail == null) {
-      return '';
+      return "";
     }
     let objString = `${this.tail.element}`;
     let previous = this.tail.prev;
@@ -141,7 +141,7 @@ list.append(3);
 list.append(4);
 list.append(5);
 list.append(5);
-list.insert(6,3);
+list.insert(6, 3);
 list.remove(2);
 // list.removeAt(1)
 console.log(list.toString());
