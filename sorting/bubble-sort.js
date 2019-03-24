@@ -12,7 +12,7 @@ function bubbleSort(array) {
   return array;
 }
 
-const ary = createArray(5);
+const ary = createArray(50000);
 
 console.log(ary)
 console.log(bubbleSort(ary))

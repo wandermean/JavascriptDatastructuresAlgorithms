@@ -40,9 +40,9 @@ class BinarySearchTree {
     if (node == null) {
       return false;
     }
-    if (this.compareFn(key, node.key) === Compare.LESS_THAN) {
+    if (key < node.key) {
       return this.searchNode(node.left, key);
-    } else if (this.compareFn(key, node.key) === Compare.BIGGER_THAN) {
+    } else if (key > node.key) {
       return this.searchNode(node.right, key);
     }
     return true;
