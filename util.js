@@ -51,6 +51,16 @@ function defaultDiff(a, b) {
   return Number(a) - Number(b);
 }
 
+function createArray(size){
+  let i = size;
+  function *ary(){
+    while(i > 0){
+      yield i--;
+    }
+  } 
+  return [...ary()]
+}
+
 module.exports = {
   Compare,
   DOES_NOT_EXIST,
@@ -61,5 +71,7 @@ module.exports = {
   defaultToString,
   swap,
   reverseCompare,
-  defaultDiff
+  defaultDiff,
+  createArray,
+  swap
 };
