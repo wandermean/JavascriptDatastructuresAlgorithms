@@ -132,18 +132,18 @@ class BinarySearchTree {
     return node;
   }
 }
-
-const tree = new BinarySearchTree();
-tree.insert(1);
-tree.insert(3);
-tree.insert(5);
-tree.insert(2);
-tree.insert(65);
-tree.insert(1451);
-tree.insert(434);
-tree.insert(21);
-tree.insert(6);
-tree.insert(11);
-tree.insert(13);
-tree.remove(13)
-tree.inOrderTraverse(v=>console.log(v))
+module.exports = BinarySearchTree;
+// const tree = new BinarySearchTree();
+// tree.insert(1);
+// tree.insert(3);
+// tree.insert(5);
+// tree.insert(2);
+// tree.insert(65);
+// tree.insert(1451);
+// tree.insert(434);
+// tree.insert(21);
+// tree.insert(6);
+// tree.insert(11);
+// tree.insert(13);
+// tree.remove(13)
+// tree.inOrderTraverse(v=>console.log(v))

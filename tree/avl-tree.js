@@ -1,6 +1,10 @@
-import { Compare, defaultCompare } from '../util';
-import BinarySearchTree from './binary-search-tree';
-import { Node } from './models/node';
+// import { Compare, defaultCompare } from '../util';
+// import BinarySearchTree from './binary-search-tree';
+// import { Node } from './models/node';
+const { defaultCompare } = require ('../util');
+const BinarySearchTree = require ('./binary-search-tree');
+const { TreeNode } = require ('../linkedList/nodeModel');
+const Node = TreeNode;
 
 const BalanceFactor = {
   UNBALANCED_RIGHT: 1,
@@ -10,7 +14,7 @@ const BalanceFactor = {
   UNBALANCED_LEFT: 5
 };
 
-export default class AVLTree extends BinarySearchTree {
+class AVLTree extends BinarySearchTree {
   constructor(compareFn = defaultCompare) {
     super(compareFn);
     this.compareFn = compareFn;
@@ -19,8 +23,10 @@ export default class AVLTree extends BinarySearchTree {
 
   getNodeHeight(node) {
     if (node == null) {
+      console.log(node,-1);
       return -1;
     }
+    console.log(node.key,Math.max(this.getNodeHeight(node.left), this.getNodeHeight(node.right)) + 1);
     return Math.max(this.getNodeHeight(node.left), this.getNodeHeight(node.right)) + 1;
   }
 
@@ -169,3 +175,18 @@ export default class AVLTree extends BinarySearchTree {
     return node;
   }
 }
+
+const tree = new AVLTree();
+tree.insert(1);
+tree.insert(3);
+// tree.insert(5);
+// tree.insert(2);
+// tree.insert(65);
+// tree.insert(1451);
+// tree.insert(434);
+// tree.insert(21);
+// tree.insert(6);
+// tree.insert(11);
+// tree.insert(13);
+// tree.remove(13)
+// console.log(tree)
